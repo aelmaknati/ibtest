@@ -1,0 +1,74 @@
+<html>
+    <style>
+        button , input {
+          width : 100%;
+          height: 50px;
+        }
+    </style>
+    <body>
+        <table style="width : 600px;">
+            <tr>
+                <td colspan="3">
+                    <input disabled value="<%=typeof result == "undefined" ? 0 : result %>"/>
+                </td>
+            </tr>
+            <tr>
+                <td><button id="plus">+</button></td> <td><button>-</button></td><td><button>/</button></td></td>
+            </tr>
+            <tr>
+                <td><button id="7" >7</button></td>    <td><button>8</button></td>    <td><button>9</button></td>
+            </tr>
+            <tr>
+                <td><button id="4" >4</button></td>    <td><button>5</button></td>    <td><button>6</button></td>
+            </tr>
+            <tr>
+                <td><button>1</button></td>    <td><button>2</button></td>    <td><button>3</button></td>
+            </tr>
+
+            <tr>
+                <td><button>0</button></td>    <td><button id="equals" type="submit">=</button></td>  <td><button>C</button></td>
+            </tr>
+        </table>
+        <form method="POST">
+            <input type="hidden" name="val1" />
+            <input type="hidden" name="val2" />
+        </form>
+
+
+        <script src="/dependencies/sails.io.js"></script>
+        <script src="/dependencies/lodash.js"></script>
+        <script src="/dependencies/jquery.min.js"></script>
+        <script>
+            let operand = ""
+            let val1 = ""
+            let val2 = ""
+            $('button').click(function (e) {
+              let text = this.innerText;
+              if (text == "="){
+                if($("input[name=val1]").val() && $("input[name=val2]").val() && $("form").attr("action")) {
+                  $("form").submit()
+                }
+              }else if (text == 'C'){
+                $("input[name=val1], input[name=val2]").val("");
+                $("form").attr("action" , "")
+              } else if (text == '*'){
+                $("form").attr("action" , "/calculatrice/multiplier")
+              }else if (text == '/'){
+                $("form").attr("action" , "/calculatrice/diviser")
+              }else if (text == '-'){
+                $("form").attr("action" , "/calculatrice/soustraire")
+              }else if (text == '+'){
+                $("form").attr("action" , "/calculatrice/additionner")
+              }else{
+                if ($("input[name=val1]").val()){
+                  $("input[name=val2] ,input:disabled").val(text)
+                }else{
+                  $("input[name=val1] ,input:disabled").val(text)
+                }
+              }
+            })
+        </script>
+    </body>
+
+
+</html>
