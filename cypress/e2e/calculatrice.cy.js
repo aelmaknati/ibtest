@@ -1,4 +1,5 @@
 describe('calculatrice', () => {
+
   it('should add two values', () => {
     cy.visit('http://localhost:1337/calculatrice')
     cy.contains( "button", '7').click()

@@ -11,7 +11,6 @@ pipeline {
             steps {
                script {
                  bat 'npm test'
-                 bat 'START node app.js'
                  bat 'npm run cypress'
                }
             }
