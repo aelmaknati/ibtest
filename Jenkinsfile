@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                script {
-                 bat 'npm test'
+                 bat 'mocha tests/lifecycle.test.js tests/unit/**/*.test.js --reporter mocha-junit-reporter'
                }
             }
         }
