@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+              bat 'npm install'
             }
         }
         stage('Test') {
             steps {
                script {
-                 bat 'mocha tests/lifecycle.test.js tests/unit/**/*.test.js --reporter mocha-junit-reporter'
+                 bat 'npm test'
                }
             }
         }
