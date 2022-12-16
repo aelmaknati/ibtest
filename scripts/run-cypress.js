@@ -9,7 +9,16 @@ sails.lift({
 
 }, function () {
 
-  cypress.run().then(() => {
+  cypress.run({
+    reporter : "mocha-junit-reporter",
+    config: {
+      video: false,
+    },
+    reporterOptions : {
+      mochaFile : "test-results-cypress.xml"
+    }
+
+  }).then(() => {
     sails.lower();
   })
 })

@@ -85,6 +85,12 @@ describe('CalculatriceService', function() {
         assert.equal(spy.callCount , 2);
         return done();
       })
+
+      it('should fail', function (done) {
+
+        assert.equal(5 , 2);
+        return done();
+      })
     });
 
 
