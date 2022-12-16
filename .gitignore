@@ -132,4 +132,5 @@ lib-cov
 *.out
 *.pid
 test-result*.xml
+.nyc_output
 
