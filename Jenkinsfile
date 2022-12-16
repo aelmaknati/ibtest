@@ -11,6 +11,8 @@ pipeline {
             steps {
                script {
                  bat 'npm test'
+                 bat 'sails lift'
+                 bat 'npm run cypress'
                }
             }
         }
