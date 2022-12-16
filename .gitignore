@@ -131,4 +131,5 @@ lib-cov
 *.log
 *.out
 *.pid
+test-result*.xml
 

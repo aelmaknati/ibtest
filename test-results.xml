@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="2.674" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2022-12-15T13:38:11" tests="0" file="cypress\e2e\calculatrice.cy.js" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="calculatrice" timestamp="2022-12-15T13:38:11" tests="1" time="2.650" failures="0">
-    <testcase name="calculatrice should add two values" time="0.779" classname="should add two values">
-    </testcase>
-  </testsuite>
-</testsuites>
