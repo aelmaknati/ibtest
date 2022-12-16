@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                npm test
+               script {
+                 bat 'npm test'
+               }
             }
         }
         stage('Deploy') {
