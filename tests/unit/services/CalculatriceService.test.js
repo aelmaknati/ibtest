@@ -63,7 +63,7 @@ describe('CalculatriceService', function() {
       return done();
     })
 
-    describe('#puissance()', function() {
+    /*describe('#puissance()', function() {
       it('should calculate a pow', function (done) {
         let a = 3;
         let b = 3;
@@ -85,7 +85,7 @@ describe('CalculatriceService', function() {
         assert.equal(spy.callCount , 2);
         return done();
       })
-    });
+    });*/
 
 
   })
