@@ -11,6 +11,7 @@ pipeline {
             steps {
                script {
                  sh 'npm test || exit 0'
+                 sh 'npm run nyc'
               //   sh 'npm run cypress'
                }
             }
