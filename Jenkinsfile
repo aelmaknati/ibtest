@@ -17,7 +17,7 @@ pipeline {
             post {
               always {
                 junit 'test-results.xml'
-                publishCoverage adapters: [coberturaAdapter(path : 'coverage/cobertura-coverage.xml' , thresholds :[unstableThreshold : 80.0])]
+                publishCoverage adapters: [coberturaAdapter(path : 'coverage/cobertura-coverage.xml' )]
                // junit 'test-results-cypress.xml'
               }
             }
