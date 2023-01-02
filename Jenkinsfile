@@ -24,7 +24,7 @@ pipeline {
         }
          stage('Package') {
             steps {
-               archiveArtifacts artifacts: '**'
+               archiveArtifacts artifacts: '**', excludes : '.tmp,coverage,cypress,node_modules,tests,.nycrc,.sailsrc,Gruntfile.js,Jenkinsfile'
             }
           
         }
