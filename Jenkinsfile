@@ -24,10 +24,7 @@ pipeline {
         }
          stage('Package') {
             steps {
-               script {
-                 archiveArtifacts artifacts: '*',
-                 //   sh 'npm run cypress'
-               }
+               archiveArtifacts artifacts: '*'
             }
           
         }
