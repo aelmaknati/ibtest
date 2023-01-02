@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              bat 'npm install'
+              sh 'npm install'
             }
         }
         stage('Test') {
             steps {
                script {
-                 bat 'npm test || exit 0'
-                 bat 'npm run cypress'
+                 sh 'npm test || exit 0'
+                 sh 'npm run cypress'
                }
             }
             post {
