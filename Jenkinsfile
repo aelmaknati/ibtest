@@ -12,14 +12,13 @@ pipeline {
                script {
                  sh 'npm test || exit 0'
                  sh 'npm run nyc'
-                 
-              //   sh 'npm run cypress'
+                 //   sh 'npm run cypress'
                }
             }
             post {
               always {
                 junit 'test-results.xml'
-                publishCoverage adapters: [coberturaAdapter('coverage/cobertura-coverage.xml')]
+                publishCoverage adapters: [coberturaAdapter(path : 'coverage/cobertura-coverage.xml' , unstableThreshold : 80.0)]
                // junit 'test-results-cypress.xml'
               }
             }
