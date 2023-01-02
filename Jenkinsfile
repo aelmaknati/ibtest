@@ -24,7 +24,7 @@ pipeline {
         }
          stage('Package') {
             steps {
-               archiveArtifacts artifacts: '*'
+               archiveArtifacts artifacts: '**'
             }
           
         }
