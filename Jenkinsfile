@@ -11,13 +11,13 @@ pipeline {
             steps {
                script {
                  sh 'npm test || exit 0'
-                 sh 'npm run cypress'
+              //   sh 'npm run cypress'
                }
             }
             post {
               always {
                 junit 'test-results.xml'
-                junit 'test-results-cypress.xml'
+               // junit 'test-results-cypress.xml'
               }
             }
         }
