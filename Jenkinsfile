@@ -7,6 +7,7 @@ pipeline {
               sh 'npm install'
             }
         }
+       
         stage('Test') {
             steps {
                script {
@@ -14,6 +15,7 @@ pipeline {
                  //   sh 'npm run cypress'
                }
             }
+            
             post {
               always {
                 junit 'test-results.xml'
@@ -27,10 +29,18 @@ pipeline {
         }
          stage('Package') {
             steps {
+               sh "uglifyjs-folder . --pattern \"**/*.js,!node_modules" -eo . -x ".js\" "
                archiveArtifacts artifacts: '**', excludes : '.tmp,coverage,cypress,node_modules,tests,.nycrc,.sailsrc,Gruntfile.js,Jenkinsfile'
             }
           
         }
+        stage('Publish') {
+            steps {
+               script {
+                   sh 'npm publish'
+               }
+            }
+         }
 
         stage('Deploy') {
             steps {

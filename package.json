@@ -1,5 +1,5 @@
 {
-  "name": "ibtests",
+  "name": "ibtests_aelmaknati",
   "private": false,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -25,7 +25,8 @@
     "mocha-junit-reporter": "^2.2.0",
     "nyc": "^15.1.0",
     "sails-hook-grunt": "^4.0.0",
-    "sinon": "^15.0.0"
+    "sinon": "^15.0.0",
+    "uglify-js": "^3.17.4"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
