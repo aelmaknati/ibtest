@@ -1,6 +1,6 @@
 {
   "name": "ibtests",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "description": "a Sails application",
   "keywords": [],
@@ -41,7 +41,7 @@
     "type": "git",
     "url": "git://github.com/anonymous node/sails user/ibtests.git"
   },
-  "author": "anonymous node/sails user",
+  "author": "aelmaknati",
   "license": "",
   "engines": {
     "node": "^16.15"
