@@ -29,7 +29,6 @@ pipeline {
         }
          stage('Package') {
             steps {
-               sh "uglifyjs-folder . --pattern \"**/*.js,!node_modules" -eo . -x ".js\" "
                archiveArtifacts artifacts: '**', excludes : '.tmp,coverage,cypress,node_modules,tests,.nycrc,.sailsrc,Gruntfile.js,Jenkinsfile'
             }
           
